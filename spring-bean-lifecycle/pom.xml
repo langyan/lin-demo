@@ -6,13 +6,18 @@
     <artifactId>spring-bean-lifecycle</artifactId>
     <packaging>jar</packaging>
     <version>0.1.0</version>
+    
+    
+   
+    
+     <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    
+    
 <dependencies>
 		<!-- tag::joda[] -->
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.2</version>
-		</dependency>
+		
 		<!-- end::joda[] -->
 		<!-- tag::junit[] -->
 		<dependency>
@@ -22,6 +27,14 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- end::junit[] -->
+		
+		 <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.3.8.RELEASE</version>
+      </dependency>
+		
+		
 	</dependencies>
 
 	<build>
@@ -39,13 +52,15 @@
 						<configuration>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>hello.HelloWorld</mainClass>
+									<mainClass>com.lin.demo.spring.Application</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+			
+        
 		</plugins>
 	</build>
 
